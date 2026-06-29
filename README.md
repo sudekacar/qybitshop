@@ -1,6 +1,6 @@
 # 🛒 QybitShop
 
-Multi Group Community Foundtaion Frontend Web Development Course eğitimi bitirme yükümlülüğü kapsamında geliştirilmiş; endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan modern, full-stack bir e-ticaret platformudur.
+MultiAcademy React Foundations eğitimi bitirme yükümlülüğü kapsamında geliştirilmiş; endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan modern, full-stack bir e-ticaret platformudur.
 
 ### 🎬 Proje Sunumu & Demo
 👉 [Proje Sunum ve Demo Videosunu İzlemek İçin Tıklayın](BURAYA_VIDEO_LINKINI_YAPISTIR)
@@ -61,5 +61,3 @@ cp .env.example .env.local
 
 # 3. Projeyi lokalde başlatın
 npm run dev
-
-Uygulama http://localhost:3000 adresinde çalışır. İlk çalıştırmada SQLite veritabanı otomatik kurulur ve örnek veriler (src/lib/seed.ts) yüklenir.
