@@ -1,41 +1,59 @@
 # 🛒 QybitShop — Full-Stack E-Commerce Platform
 
-QybitShop, endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan özgün konseptli bir full-stack e-ticaret uygulamasıdır. Bu proje, **React Foundations** eğitimi bitirme yükümlülüğü kapsamında modüler, tip güvenli ve performans odaklı olarak geliştirilmiştir.
+QybitShop, endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan özgün konseptli bir full-stack e-ticaret uygulamasıdır. Bu proje, **MultiGroup Community Foundation Frontend Web Development Course** eğitimi bitirme yükümlülüğü kapsamında modüler, tip güvenli ve performans odaklı olarak geliştirilmiştir.
 
 ## 🎬 Proje Tanıtım Videosu
 👉 [Proje Sunum ve Demo Videosunu İzlemek İçin Tıklayın](BURAYA_VIDEO_LINKINI_YAPISTIR)
 
 ---
 
-## 🚀 Öne Çıkan Özellikler
+## 🛠️ Kullanılan Teknolojiler ve Altyapı
 
-### 🏗️ Çekirdek Mimari
-- **Next.js App Router & Server Actions:** Form mutasyonları ve veritabanı işlemleri tamamen modern sunucu eylemleriyle yönetilir.
-- **SQLite & İlişkisel Veritabanı:** Hafif, hızlı ve kararlı bir veritabanı mimari katmanı üzerinde sipariş ve yorum kayıtları tutulur.
-- **TypeScript:** `any` kullanılmadan, tam tip güvenliği (strict type-safe) sağlanarak tüm veri modelleri interface'ler ile kurgulanmıştır.
-
-### 🌟 Gelişmiş Özellikler (Bonus)
-- **El Yapımı Çoklu Dil (i18n):** Dışarıdan ekstra ağır üçüncü parti paketler yüklenmeden, React Context API ve yerel JSON dil paketleri kullanılarak Türkçe/İngilizce dinamik dil desteği sağlandı.
-- **Native Dark Mode:** Kullanıcı tercihlerini `localStorage` üzerinde saklayan, CSS tabanlı özel tema yönetim sistemi.
-- **Dinamik Arama & `useDebounce`:** Ürün arama barında veritabanını optimize etmek ve gereksiz istekleri engellemek amacıyla custom debouncing hook'u entegre edilmiştir.
-- **Ürün Yorum ve Puanlama Sistemi:** Kullanıcıların ürün detay sayfasında dinamik olarak puan (1-5 Yıldız) ve yorum bırakabileceği SQLite entegreli yapı.
-- **Korumalı Sayfalar (Auth Middleware):** Giriş yapmamış kullanıcıların sepet ve sipariş geçmişine erişmesini engelleyen Next.js Middleware koruması.
-
----
-
-## 🛠️ Kullanılan Teknolojiler
-
-- **Framework:** Next.js (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Database:** SQLite
-- **State Management:** React Context API & `useReducer`
+| Kategori | Teknoloji / Kütüphane | Açıklama |
+| :--- | :--- | :--- |
+| **Framework** | Next.js 15 (App Router) | Sunucu taraflı render (SSR), Server Actions ve optimize yönlendirme mimarisi. |
+| **Dil** | TypeScript | `any` kullanılmadan kurgulanmış strict type-safe mimari ve interface modelleri. |
+| **UI Core** | React 19 | Gelecek nesil React özellikleriyle güçlendirilmiş bileşen yapısı. |
+| **Styling** | Tailwind CSS 4 | Modern, esnek, performanslı ve utility-first CSS tasarımları. |
+| **Veritabanı** | SQLite (better-sqlite3) | Sipariş, kullanıcı ve yorum kayıtlarının tutulduğu ilişkisel lokal DB katmanı. |
+| **Oturum Yönetimi** | iron-session | Güvenli, şifrelenmiş cookie tabanlı session yönetimi. |
+| **Validasyon** | Zod | Runtime tip güvenliği ve form verilerinin güvenli doğrulanması. |
+| **Şifreleme** | bcryptjs | Kullanıcı şifrelerinin veritabanına güvenli bir şekilde hashlenerek kaydedilmesi. |
 
 ---
 
-## 💻 Kurulum ve Çalıştırma
+## 🚀 Öne Çıkan Mimari ve Gelişmiş Özellikler (Eksiksiz Liste)
 
-1. Projeyi bilgisayarınıza indirin veya klonlayın:
-```bash
-git clone [https://github.com/sudekacar/qybitshop.git](https://github.com/sudekacar/qybitshop.git)
-cd qybitshop
+### 🏗️ Çekirdek Özellikler & Kimlik Doğrulama
+- **Gelişmiş Oturum Yönetimi:** Kullanıcı kaydı, girişi ve `iron-session` ile güvenli session kontrolü.
+- **Güvenli Sayfa Erişimi (Auth Middleware):** Giriş yapmamış kullanıcıların sepet, ödeme ve sipariş geçmişi sayfalarına erişmesini engelleyen Next.js Middleware altyapısı.
+- **Profil Yönetimi:** Kullanıcı detaylarının gösterimi ve güvenli oturum kapatma (Logout) mekanizması.
+
+### 🛍️ Ürün ve Sepet Dinamikleri
+- **Akıllı Listeleme & Vitrin:** Ana sayfada öne çıkan ürünler, dinamik kategori navigasyonu ve grid yapılı ürün listesi.
+- **Arama, Filtreleme ve Sıralama:** Ürünler sayfasında anlık kategori filtreleme, fiyata göre sıralama (artan/azalan) özellikleri.
+- **useDebounce Entegrasyonu:** Ürün arama barında veritabanını optimize etmek ve gereksiz render/istek trafiğini engellemek amacıyla özel debouncing hook'u.
+- **Global State Yönetimi:** Sepet işlemleri için React'ın native `Context API` ve `useReducer` mekanizması bir arada kullanılmıştır.
+- **LocalStorage Kalıcılığı:** Sepet içeriği, miktar güncellemeleri ve kullanıcı tercihleri sayfa yenilense dahi tarayıcı hafızasında saklanır.
+
+### 🌟 İleri Düzey & Bonus Özellikler
+- **El Yapımı Çoklu Dil (i18n):** Dışarıdan ekstra ağır paket yüklenmeden, React Context API ve yerel JSON dil paketleri (`src/i18n`) kullanılarak tamamen native olarak kurgulanmış Türkçe/İngilizce dinamik dil sistemi.
+- **Native Dark Mode:** Kullanıcı tercihlerini `localStorage` üzerinde saklayan, CSS değişkenleri tabanlı bütünsel tema yönetim sistemi.
+- **Ürün Yorum ve Puanlama Sistemi:** Kullanıcıların ürün detay sayfasında dinamik olarak puan (1-5 Yıldız) ve yorum bırakabileceği, veritabanındaki `reviews` tablosuna canlı işleyen altyapı.
+- **Sipariş ve Ödeme Döngüsü:** Teslimat bilgileri formu, simüle edilmiş kredi/banka kartı ödeme adımı, başarılı sipariş sonrası `orders` ve `order_items` tablolarının tetiklenmesi ve sipariş geçmişi takibi.
+
+---
+
+## 📂 Proje Yapısı
+
+```text
+src/
+├── app/              # Next.js App Router sayfaları ve API rotaları
+├── components/       # Yeniden kullanılabilir UI bileşenleri (auth, cart, layout, products, reviews)
+├── context/          # Küresel state yönetim sağlayıcıları (Cart, Theme, Locale)
+├── hooks/            # useDebounce gibi özel custom hook tanımları
+├── i18n/             # Türkçe ve İngilizce dil paketleri (tr.ts, en.ts)
+├── lib/              # Veritabanı sorguları, auth süreçleri, seed verileri ve yardımcı fonksiyonlar
+├── actions/          # Sunucu tarafında çalışan Server Actions mimarisi (auth, orders, reviews)
+├── types/            # Proje genelinde kullanılan strict TypeScript interface modelleri
+└── middleware.ts     # Route bazlı erişim koruma katmanı
