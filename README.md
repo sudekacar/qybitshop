@@ -43,6 +43,16 @@ Multi Group Foundation Frontend Web Development Course eğitimi bitirme yüküml
 
 ---
 
+🔗 Yerel Bağlantı
+Uygulama yerel ağda başlatıldıktan sonra aşağıdaki bağlantı üzerinden test edilebilir:
+
+👉 http://localhost:3000
+
+İlk çalıştırmada SQLite veritabanı otomatik kurulur ve örnek veriler (src/lib/seed.ts) sisteme enjekte edilir.
+
+
+---
+
 ### 🔑 Test Bilgileri & Kurulum
 
 **Demo Hesaplar:**
@@ -61,10 +71,3 @@ cp .env.example .env.local
 
 # 3. Projeyi lokalde başlatın
 npm run dev
-
-🔗 Yerel Bağlantı
-Uygulama yerel ağda başlatıldıktan sonra aşağıdaki bağlantı üzerinden test edilebilir:
-
-👉 http://localhost:3000
-
-İlk çalıştırmada SQLite veritabanı otomatik kurulur ve örnek veriler (src/lib/seed.ts) sisteme enjekte edilir.
