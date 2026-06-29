@@ -57,3 +57,36 @@ src/
 ├── actions/          # Sunucu tarafında çalışan Server Actions mimarisi (auth, orders, reviews)
 ├── types/            # Proje genelinde kullanılan strict TypeScript interface modelleri
 └── middleware.ts     # Route bazlı erişim koruma katmanı
+
+📋 Sayfa Haritası ve Erişim YetkileriRoute (URL)Erişim TürüAçıklama/Public (Herkes)QybitShop vitrini, slaytlar ve öne çıkan teknoloji ürünleri./productsPublic (Herkes)Dinamik filtreleme, arama ve sıralama yapılabilen gelişmiş ürün listesi./products/[id]Public (Herkes)Ürün detayları, teknik özellikler ve canlı kullanıcı yorumları./login / /registerPublic (Herkes)Kullanıcı giriş ve kayıt sayfaları./cartProtected (Kullanıcı)Sepet içeriği, miktar güncellemeleri ve anlık tutar hesaplamaları./checkoutProtected (Kullanıcı)Teslimat bilgileri formu ve simüle edilmiş ödeme adımı./checkout/successProtected (Kullanıcı)Başarılı sipariş sonrası yönlendirilen güvenli onay ekranı./ordersProtected (Kullanıcı)Kullanıcının geçmiş siparişlerini ve durumunu görebileceği canlı liste./orders/[id]Protected (Kullanıcı)Verilen siparişe ait ürün kırılımları ve fatura adresi detayları./profileProtected (Kullanıcı)Güvenli çıkış (Logout) butonu ve kullanıcı profil detayları.
+
+🔑 Demo Hesap BilgileriSistemi doğrudan test edebilmeniz için veritabanında hazır tanımlanmış kimlik bilgileri:E-postaŞifreRol / Yetkidemo@multiacademy.comdemo123Standart Kullanıcı Hesabıadmin@multiacademy.comdemo123Yönetici (Admin) Hesabı
+Kurulum ve Çalıştırma
+Projeyi bilgisayarınıza indirin veya klonlayın:
+
+Bash
+git clone [https://github.com/sudekacar/qybitshop.git](https://github.com/sudekacar/qybitshop.git)
+cd qybitshop
+Gerekli bağımlılıkları yükleyin:
+
+Bash
+npm install
+Ortam değişkenlerini ayarlayın (Root dizinde .env.local dosyası oluşturun):
+
+Bash
+cp .env.example .env.local
+Geliştirme sunucusunu başlatın:
+
+Bash
+npm run dev
+Uygulama yerel ağda http://localhost:3000 adresinde çalışmaya başlar. İlk çalıştırmada SQLite veritabanı otomatik olarak oluşturulur ve src/lib/seed.ts üzerindeki örnek veriler (kategoriler, teknolojik ürünler, yorumlar ve demo kullanıcılar) sisteme otomatik enjekte edilir.
+
+☁️ Deployment (Dağıtım) Notu
+SQLite dosya tabanlı bir veritabanıdır. Vercel gibi tamamen serverless (sunucusuz) çalışan platformlar geçici dosya sistemi kullandığından kalıcı depolama desteklemez. Projenin canlıya taşınması durumunda:
+
+Railway veya Render gibi kalıcı disk alanı (persistent volume) sunan platformlar tercih edilmelidir.
+
+Ya da veritabanı katmanı Turso / libSQL gibi bulut tabanlı bir SQLite servisine kolayca bağlanabilir.
+
+⚖️ Lisans
+Bu proje MultiAcademy React Foundations bootcamp mezuniyet projesi kapsamında geliştirilmiştir. Tüm hakları saklıdır.
