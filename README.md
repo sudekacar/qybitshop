@@ -89,4 +89,4 @@ Railway veya Render gibi kalıcı disk alanı (persistent volume) sunan platform
 Ya da veritabanı katmanı Turso / libSQL gibi bulut tabanlı bir SQLite servisine kolayca bağlanabilir.
 
 ⚖️ Lisans
-Bu proje MultiAcademy React Foundations bootcamp mezuniyet projesi kapsamında geliştirilmiştir. Tüm hakları saklıdır.
+Bu proje, MultiGroup Community Foundation Frontend Web Development Course mezuniyet projesi kapsamında geliştirilmiştir. Tüm hakları saklıdır.
