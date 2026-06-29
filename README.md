@@ -1,6 +1,6 @@
 # 🛒 QybitShop
 
-Bu proje, MultiGroup Community Foundation Frontend Web Development Course eğitimi bitirme yükümlülüğü kapsamında geliştirilmiş; endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan modern, full-stack bir e-ticaret platformudur.
+Multi Group Foundation Frontend Web Development Course eğitimi bitirme yükümlülüğü kapsamında geliştirilmiş; endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan modern, full-stack bir e-ticaret platformudur.
 
 ### 🎬 Proje Sunumu & Demo
 👉 [Proje Sunum ve Demo Videosunu İzlemek İçin Tıklayın](BURAYA_VIDEO_LINKINI_YAPISTIR)
@@ -52,7 +52,7 @@ Bu proje, MultiGroup Community Foundation Frontend Web Development Course eğiti
 **Çalıştırma Adımları:**
 ```bash
 # 1. Projeyi klonlayın ve klasöre girin
-git clone [https://github.com/sudekacar/qybitshop.git](https://github.com/sudekacar/qybitshop.git)
+git clone https://github.com/sudekacar/qybitshop.git
 cd qybitshop
 
 # 2. Bağımlılıkları yükleyin ve ortam dosyasını oluşturun
@@ -62,4 +62,9 @@ cp .env.example .env.local
 # 3. Projeyi lokalde başlatın
 npm run dev
 
-Uygulama http://localhost:3000 adresinde çalışır. İlk çalıştırmada SQLite veritabanı otomatik kurulur ve örnek veriler (src/lib/seed.ts) yüklenir.
+🔗 Yerel Bağlantı
+Uygulama yerel ağda başlatıldıktan sonra aşağıdaki bağlantı üzerinden test edilebilir:
+
+👉 http://localhost:3000
+
+İlk çalıştırmada SQLite veritabanı otomatik kurulur ve örnek veriler (src/lib/seed.ts) sisteme enjekte edilir.
