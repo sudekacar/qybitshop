@@ -1,125 +1,48 @@
-# MultiShop — E-Ticaret Uygulaması
+🛒 QybitShop — Full-Stack E-Commerce Platform
+QybitShop, endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan özgün konseptli bir full-stack e-ticaret uygulamasıdır. Bu proje, React Foundations eğitimi bitirme yükümlülüğü kapsamında modüler, tip güvenli ve performans odaklı olarak geliştirilmiştir.
 
-MultiAcademy React Foundations mezuniyet projesi kapsamında geliştirilmiş tam işlevsel bir e-ticaret web uygulamasıdır.
+🎬 Proje Tanıtım Videosu
+👉 Proje Sunum ve Demo Videosunu İzlemek İçin Tıklayın
 
-## Canlı Demo
+🚀 Öne Çıkan Özellikler
+🏗️ Çekirdek Mimari
+Next.js App Router & Server Actions: Form mutasyonları ve veritabanı işlemleri tamamen modern sunucu eylemleriyle yönetilir.
 
-> Deployment sonrası buraya canlı demo linkinizi ekleyin.
+SQLite & İlişkisel Veritabanı: Hafif, hızlı ve kararlı bir veritabanı mimari katmanı üzerinde sipariş ve yorum kayıtları tutulur.
 
-## Tanıtım Videosu
+TypeScript: any kullanılmadan, tam tip güvenliği (strict type-safe) sağlanarak tüm veri modelleri interface'ler ile kurgulanmıştır.
 
-> 3-5 dakikalık proje tanıtım video linkinizi buraya ekleyin.
+🌟 Gelişmiş Özellikler (Bonus)
+El Yapımı Çoklu Dil (i18n): Dışarıdan ekstra ağır üçüncü parti paketler yüklenmeden, React Context API ve yerel JSON dil paketleri kullanılarak Türkçe/İngilizce dinamik dil desteği sağlandı.
 
-## Kullanılan Teknolojiler
+Native Dark Mode: Kullanıcı tercihlerini localStorage üzerinde saklayan, CSS tabanlı özel tema yönetim sistemi.
 
-| Kategori | Teknoloji |
-|----------|-----------|
-| Framework | Next.js 16 (App Router) |
-| Dil | TypeScript |
-| UI | React 19 |
-| Styling | Tailwind CSS 4 |
-| Veritabanı | SQLite (better-sqlite3) |
-| Kimlik Doğrulama | iron-session (session tabanlı) |
-| Validasyon | Zod |
-| Şifreleme | bcryptjs |
+Dinamik Arama & useDebounce: Ürün arama barında veritabanını optimize etmek ve gereksiz istekleri engellemek amacıyla custom debouncing hook'u entegre edilmiştir.
 
-## Özellikler
+Ürün Yorum ve Puanlama Sistemi: Kullanıcıların ürün detay sayfasında dinamik olarak puan (1-5 Yıldız) ve yorum bırakabileceği SQLite entegreli yapı.
 
-### Kimlik Doğrulama
-- Kullanıcı kaydı ve girişi
-- Session tabanlı oturum yönetimi
-- Middleware ile korumalı sayfa erişimi
-- Profil sayfası ve güvenli çıkış
+Korumalı Sayfalar (Auth Middleware): Giriş yapmamış kullanıcıların sepet ve sipariş geçmişine erişmesini engelleyen Next.js Middleware koruması.
 
-### Ürünler
-- Ana sayfada öne çıkan ürünler ve kategori navigasyonu
-- Ürün listesi (grid görünümü)
-- Arama, kategori/fiyat filtreleme ve sıralama
-- Ürün detay sayfası
+🛠️ Kullanılan Teknolojiler
+Framework: Next.js (App Router)
 
-### Sepet
-- Context API + useReducer ile global sepet yönetimi
-- localStorage ile kalıcılık
-- Miktar güncelleme ve ürün kaldırma
+Language: TypeScript
 
-### Sipariş
-- Teslimat bilgileri formu
-- Simüle ödeme (kredi/banka kartı)
-- Sipariş onay sayfası
-- Sipariş geçmişi ve detay takibi
+Styling: Tailwind CSS
 
-## Demo Hesap Bilgileri
+Database: SQLite
 
-| E-posta | Şifre | Rol |
-|---------|-------|-----|
-| demo@multiacademy.com | demo123 | Kullanıcı |
-| admin@multiacademy.com | demo123 | Admin |
+State Management: React Context API & useReducer
 
-## Kurulum
+💻 Kurulum ve Çalıştırma
+Projeyi bilgisayarınıza indirin veya klonlayın:
+git clone https://github.com/sudekacar/qybitshop.git
+cd qybitshop
 
-### Gereksinimler
-
-- Node.js 18+
-- npm
-
-### Adımlar
-
-```bash
-# Repoyu klonlayın
-git clone <repo-url>
-cd multiacademy-ecommerce
-
-# Bağımlılıkları yükleyin
+Gerekli bağımlılıkları yükleyin:
 npm install
 
-# Ortam değişkenlerini ayarlayın
-cp .env.example .env.local
-
-# Geliştirme sunucusunu başlatın
+Geliştirici modunda projeyi ayağa kaldırın:
 npm run dev
-```
 
-Uygulama [http://localhost:3000](http://localhost:3000) adresinde çalışır.
-
-İlk çalıştırmada SQLite veritabanı otomatik oluşturulur ve örnek veriler (4 kategori, 15 ürün, demo kullanıcılar) yüklenir.
-
-## Proje Yapısı
-
-```
-src/
-├── app/              # Next.js App Router sayfaları
-├── components/       # Yeniden kullanılabilir UI bileşenleri
-├── context/          # CartProvider (Context API)
-├── hooks/            # useDebounce custom hook
-├── lib/              # Veritabanı, auth, yardımcı fonksiyonlar
-├── actions/          # Server Actions (auth, checkout)
-├── types/            # TypeScript tip tanımları
-└── middleware.ts     # Route koruma
-```
-
-## Sayfa Haritası
-
-| Route | Erişim | Açıklama |
-|-------|--------|----------|
-| `/` | Public | Ana sayfa |
-| `/products` | Public | Ürün listesi |
-| `/products/[id]` | Public | Ürün detay |
-| `/login` | Public | Giriş |
-| `/register` | Public | Kayıt |
-| `/cart` | Protected | Sepet |
-| `/checkout` | Protected | Ödeme |
-| `/checkout/success` | Protected | Sipariş onayı |
-| `/orders` | Protected | Sipariş geçmişi |
-| `/orders/[id]` | Protected | Sipariş detay |
-| `/profile` | Protected | Profil |
-
-## Deployment Notu
-
-SQLite dosya tabanlı bir veritabanıdır. Vercel gibi serverless platformlarda kalıcı depolama desteklenmez. Önerilen platformlar:
-
-- **Railway** veya **Render** (persistent volume ile)
-- Alternatif: Turso/libSQL gibi bulut SQLite servisi
-
-## Lisans
-
-Bu proje MultiAcademy React Foundations bootcamp mezuniyet projesi kapsamında geliştirilmiştir.
+Tarayıcınızda http://localhost:3000 adresini açın.
