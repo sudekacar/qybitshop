@@ -20,18 +20,20 @@ Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları t
 
 ```bash
 npm install
+```
 
 2. Veritabanını Hazırlayın (Seed Data):
 Aşağıdaki komut, SQLite veritabanını (data/shop.db) ilk kez oluşturur ve gerekli tüm demo ve admin hesaplarını otomatik olarak içerisine enjekte (seed) eder.
 
 ```bash
 npm run db:setup
-
+```
 
 3. Uygulamayı Başlatın:
 
 ```bash
 npm run dev
+```
 
 Uygulama tarayıcınızda http://localhost:3000 adresinde çalışmaya başlayacaktır.
 
