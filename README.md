@@ -15,17 +15,23 @@ Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları t
    ```bash
    git clone [https://github.com/sude-yaren-kacar/qybitshop.git](https://github.com/sude-yaren-kacar/qybitshop.git)
    cd qybitshop
-Bağımlılıkları Yükleyin:
 
-Bash
+1. Bağımlılıkları Yükleyin:
+
+```bash
 npm install
-Veritabanını Hazırlayın (Seed Data):
+
+2. Veritabanını Hazırlayın (Seed Data):
 Aşağıdaki komut, SQLite veritabanını (data/shop.db) ilk kez oluşturur ve gerekli tüm demo ve admin hesaplarını otomatik olarak içerisine enjekte (seed) eder.
 
-Bash
+```bash
 npm run db:setup
-Uygulamayı Başlatın:
 
-Bash
+
+3. Uygulamayı Başlatın:
+
+```bash
 npm run dev
+
 Uygulama tarayıcınızda http://localhost:3000 adresinde çalışmaya başlayacaktır.
+
