@@ -10,7 +10,6 @@ QybitShop, modern web teknolojileri, katı güvenlik standartları ve yüksek pe
 ## 🚀 Proje Kurulumu ve Yerel Çalıştırma (Local Setup)
 
 Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
-
 1. **Repoyu Klonlayın:**
    ```bash
    git clone [https://github.com/sude-yaren-kacar/qybitshop.git](https://github.com/sude-yaren-kacar/qybitshop.git)
