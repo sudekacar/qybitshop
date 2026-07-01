@@ -58,3 +58,17 @@ Projeyi kendi yerel ortamınızda çalıştırmak için aşağıdaki adımları 
 1. **Bağımlılıkları yükleyin:**
    ```bash
    npm install
+
+ Geliştirme sunucusunu başlatın (İlk çalıştırmada veritabanı otomatik seed edilecektir):
+
+```bash
+npm run dev
+```
+
+2. ** Tarayıcınızda http://localhost:3000 adresini ziyaret edin. **
+
+🗺️ Gelecek Planları (Future Roadmap)
+[ ] Admin rol bilgisine tam bağımlı, stok ve ürün yönetiminin yapılabileceği kapsamlı bir Yönetici Paneli (Dashboard) entegrasyonu.
+
+[ ] Simüle edilen ödeme adımının iyzico veya PayTR API'leri kullanılarak gerçek bir Ödeme Geçidi (Payment Gateway) sistemine dönüştürülmesi.
+
