@@ -1,73 +1,21 @@
-# 🛒 QybitShop
+Markdown# 🛒 QybitShop - Industrial IoT & E-Commerce Platform
 
-Multi Group Foundation Frontend Web Development Course eğitimi bitirme yükümlülüğü kapsamında geliştirilmiş; endüstriyel IoT donanımları, yapay zeka geliştirici kitleri ve yazılım çözümleri sunan modern, full-stack bir e-ticaret platformudur.
+QybitShop, modern web teknolojileri, katı güvenlik standartları ve yüksek performanslı yazılım mimarileri (RBAC) dikkate alınarak geliştirilmiş full-stack bir e-ticaret ve endüstriyel cihaz yönetim platformudur. Projenin frontend ve backend servisleri tek bir çatı altında birleştirilmiş ve canlı ortama (production) başarılı bir şekilde deploy edilmiştir.
 
-### 🎬 Proje Sunumu & Demo
-👉 [Proje Sunum ve Demo Videosunu İzlemek İçin Tıklayın](BURAYA_VIDEO_LINKINI_YAPISTIR)
-
----
-
-### 🚀 Öne Çıkan Teknik Özellikler
-
-*   **Modern Mimari:** Next.js 15 App Router, React 19, Server Actions ve tam tip güvenliği sağlayan TypeScript.
-*   **Küresel State:** Sepet yönetimi ve veri kalıcılığı için yerel `Context API`, `useReducer` ve `LocalStorage` entegrasyonu.
-*   **Gelişmiş Filtreleme:** Arama barında veritabanını yormayan `useDebounce` custom hook altyapısı ile anlık kategori/fiyat filtreleme.
-*   **Korumalı Sayfalar:** Giriş yapmamış kullanıcıların hassas sayfalara erişmesini engelleyen Next.js `Middleware` koruması.
-*   **Özel Bonus Özellikler:**
-    *   🌍 **El Yapımı Çoklu Dil (i18n):** Paket kullanılmadan Context API ile yazılmış Türkçe/İngilizce desteği.
-    *   🌙 **Native Dark Mode:** Kullanıcı tercihine duyarlı, CSS değişkenli tema sistemi.
-    *   💬 **Yorum & Puanlama:** Ürün detay sayfasında SQLite veritabanına canlı işleyen 1-5 Yıldız ve yorum sistemi.
+🌐 **Canlı Uygulama Linki (Railway):** [qybitshop-production.up.railway.app](https://qybitshop-production.up.railway.app)
+🎥 **Proje Demo ve Teknik Sunum Videosu:** [Proje Teslim Sistemi Eki]
 
 ---
 
-### 📦 Teknoloji Yığını & Sayfa Haritası
+## 🚀 Proje Kurulumu ve Yerel Çalıştırma (Local Setup)
 
-<details>
-<summary>🛠️ Kullanılan Teknolojiler (Genişletmek için tıklayın)</summary>
+Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
 
-*   **Framework / Dil:** Next.js 15 & TypeScript
-*   **Styling:** Tailwind CSS 4
-*   **Database:** SQLite (`better-sqlite3`)
-*   **Oturum Yönetimi:** `iron-session` (Session tabanlı)
-*   **Validasyon & Şifreleme:** Zod & `bcryptjs`
-</details>
-
-<details>
-<summary>📋 Sayfa Haritası & Yetkilendirme (Genişletmek için tıklayın)</summary>
-
-*   `/` & `/products` & `/products/[id]` 🔓 **Public** — Vitrin, filtreleme ve ürün detayları.
-*   `/login` & `/register` 🔓 **Public** — Giriş ve kayıt işlemleri.
-*   `/cart` & `/checkout` & `/checkout/success` 🔒 **Korumalı** — Sepet ve simüle ödeme adımları.
-*   `/orders` & `/orders/[id]` & `/profile` 🔒 **Korumalı** — Canlı sipariş geçmişi ve profil yönetimi.
-</details>
-
----
-
-🔗 Yerel Bağlantı
-Uygulama yerel ağda başlatıldıktan sonra aşağıdaki bağlantı üzerinden test edilebilir:
-
-👉 http://localhost:3000
-
-İlk çalıştırmada SQLite veritabanı otomatik kurulur ve örnek veriler (src/lib/seed.ts) sisteme enjekte edilir.
-
-
----
-
-### 🔑 Test Bilgileri & Kurulum
-
-**Demo Hesaplar:**
-*   **Kullanıcı:** `demo@multiacademy.com` | **Şifre:** `demo123`
-*   **Yönetici:** `admin@multiacademy.com` | **Şifre:** `demo123`
-
-**Çalıştırma Adımları:**
-```bash
-# 1. Projeyi klonlayın ve klasöre girin
-git clone https://github.com/sudekacar/qybitshop.git
-cd qybitshop
-
-# 2. Bağımlılıkları yükleyin ve ortam dosyasını oluşturun
-npm install
-cp .env.example .env.local
-
-# 3. Projeyi lokalde başlatın
-npm run dev
+1. **Repoyu Klonlayın:**
+   ```bash
+   git clone [https://github.com/sude-yaren-kacar/qybitshop.git](https://github.com/sude-yaren-kacar/qybitshop.git)
+   cd qybitshop
+Bağımlılıkları Yükleyin:Bashnpm install
+Veritabanını Hazırlayın (Seed Data):Aşağıdaki komut, SQLite veritabanını (data/shop.db) ilk kez oluşturur ve gerekli tüm demo ve admin hesaplarını otomatik olarak içerisine enjekte (seed) eder.Bashnpm run db:setup
+Uygulamayı Başlatın:Bashnpm run dev
+Uygulama tarayıcınızda http://localhost:3000 adresinde çalışmaya başlayacaktır.👤 Kimlik Doğrulama ve Demo Hesap BilgileriSistemde rol tabanlı yetkilendirme (Role-Based Access Control - RBAC) altyapısı kuruludur. Uygulamayı hızlıca test edebilmeniz için veritabanı ilk kez ayağa kalktığında (seed sırasında) otomatik olarak tanımlanan iki adet test hesabı mevcuttur:E-postaŞifreRol (Role)Görünen Ad (Display Name)demo@qybitlabs.comdemo123Kullanıcı (user)Demo Kullanıcıadmin@qybitlabs.comdemo123Yönetici (admin)Qybit Admin📌 Not: Giriş sayfasında (/login) kullanıcıların hızlı erişimi için varsayılan olarak demo@qybitlabs.com bilgileri gösterilmektedir. Yönetici (admin) hesabı da aynı şifreyle kararlı bir şekilde çalışmaktadır.🛠️ Teknolojik Altyapı ve Yazılım MimarisiNext.js 16 App Router (Full-Stack): Sunucu tarafı işleme (Server-Side Rendering - SSR) ve Server Components kullanılarak maksimum SEO ve FCP performansı sağlanmıştır. API endpoints ve Server Actions ile optimize bir veri akışı kurgulanmıştır.TypeScript: Tüm kaynak kod tabanında katı arayüzler (interfaces) ve tipler (types) tanımlanarak derleme zamanında (compile-time) statik tip güvenliği sağlanmıştır.React 19 & Tailwind CSS 4: Modern, bileşen tabanlı (component-based) UI mimarisi ve yardımcı sınıf öncelikli (utility-first) CSS motoru kullanılarak tamamen duyarlı (responsive) bir arayüz geliştirilmiştir.SQLite & Better-sqlite3: Hafif, taşınabilir ve ilişkisel veri modeli sunan dosya tabanlı SQL veritabanı mimarisi kullanılmıştır. Tablolar arası bire-çok (one-to-many) ilişkiler korunmuştur.Iron Session: Oturum yönetimi (session), şifreli ve durum bilgisi barındırmayan (stateless) JWT benzeri şifreli cookie mimarisiyle httpOnly ve secure bayrakları altında güvenle yönetilir.Bcrypt: Kullanıcı şifreleri veritabanına asla düz metin olarak kaydedilmez; salted hashing mekanizmasıyla kriptografik olarak güvenceye alınır.Zod: Tüm form girdileri ve API istekleri sunucu sınırında katı şemalarla doğrulanarak veri bütünlüğü sağlanır ve SQL Injection gibi olası güvenlik açıkları en başından engellenir.📌 Tamamlanan Proje İsterleri (Checklist)Proje dökümantasyonunda yer alan tüm zorunlu isterler eksiksiz bir şekilde yerine getirilmiştir:🔒 Kimlik Doğrulama (Authentication)[x] Kullanıcı kayıt olabiliyor (Sign Up) - Zod & Bcrypt korumalı[x] Kullanıcı giriş yapabiliyor (Login) - Iron Session doğrulamalı[x] Oturum yönetimi kararlı çalışıyor (Session persistence)[x] Korumalı sayfalara (/cart, /profile) yetkisiz erişim Next.js middleware.ts ile engelleniyor[x] Kullanıcı güvenli çıkış yapabiliyor (Logout - Session destroy)📦 Ürün Yönetimi ve Gelişmiş Arama[x] Ürünler veritabanından dinamik ve performanslı listeleniyor[x] Ürün detay sayfası dinamik routing (/products/[id]) ile sorunsuz çalışıyor[x] useDebounce Arama Fonksiyonu: Kullanıcı yazmayı bitirene kadar istek ertelenerek SQLite veritabanı sorguları optimize ediliyor[x] Kategori tabanlı dinamik filtreleme çalışıyor[x] Fiyata ve tarihe göre dinamik sıralama (Sorting) mekanizması aktif🌗 Kullanıcı Deneyimi (UX) & Esnek Arayüz (Vibe)[x] Dinamik Dark / Light Mode: React Context API ve Tailwind 4 sınıfları ile sayfa yenilense dahi kullanıcının tema tercihi (localStorage) korunuyor[x] Çoklu Dil Desteği (i18n): Next.js Context API tabanlı yerel sözlük (JSON) mekanizmasıyla sayfa yenilenmeden saliseler içinde Türkçe / İngilizce geçişi yapılıyor🛒 Sepet, Sipariş ve Checkout Döngüsü[x] Sepete dinamik ürün eklenebiliyor (React Context API)[x] Sepette anlık miktar güncellenebiliyor ve sepetten ürün silinebiliyor[x] Sepet toplam tutarı ve adet bilgileri anlık olarak doğru hesaplanıyor[x] Local Storage Koruması: Sayfa yenilendiğinde (F5) sepet içeriği başarıyla korunuyor[x] Checkout formu eksiksiz çalışıyor (Adres ve fatura bilgileri doğrulaması)[x] Server Actions kullanılarak güvenli ödeme simülasyonu başarıyla tamamlanıyor[x] Sipariş başarıyla oluşturulup SQLite üzerindeki orders tablosuna ilişkisel olarak yazılıyor[x] Kullanıcı, profil sayfası üzerinden geçmiş siparişlerini anlık görüntüleyebiliyor🔮 Gelecek Planları (Future Roadmap)Comprehensive Admin Dashboard: Sistemde halihazırda altyapısı kurulan ve profil sayfasında doğrulanan Yönetici (admin) rolüne bağlı olarak, ürün ekleme/silme ve stok yönetimini sağlayan tam teşekküllü bir admin paneli entegrasyonu.Gerçek Ödeme Entegrasyonu: Simüle edilen ödeme adımının iiyzico veya PayTR API'leri bağlanarak gerçek kart işlemlerine açılması.💡 Geliştirici: SUDE YAREN KACAR💼 Şirket/Venture: Qybit Labs / Qybit Machinery
