@@ -6,7 +6,7 @@ Next.js 16 App Router, TypeScript ve Tailwind CSS 4 mimarisi üzerine kurulu, en
 
 ## 🌐 Canlı Uygulama & Sunum Bilgileri
 
-* 🌍 **Canlı Proje URL:** qybitshop-production.up.railway.app
+* 🌍 Canlı Proje URL: qybitshop-production.up.railway.app
 * 🎬 **Teknik Sunum & Demo Videosu: https://youtu.be/0hdw5N94JLc?si=_6Kb-8_ALin2syBw** Proje dizininde yer alan 10 dakikalık sunum videosunda, kod mimarisi ve kullanıcı akışları detaylı olarak anlatılmıştır.
 * 📝 **Proje Mühendislik Makalesi (Medium):** [https://medium.com/@sudeykacar/building-qybitshop-a-production-ready-full-stack-e-commerce-platform-with-next-js-ea34cf33d74e?sharedUserId=sudeykacar] — *Projenin ardındaki mimari kararlar, teknik süreçler ve gelecek planları detaylı bir makale olarak kaleme alınmıştır.*
 ---
