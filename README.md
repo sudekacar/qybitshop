@@ -37,4 +37,3 @@ npm run dev
 Uygulama tarayıcınızda http://localhost:3000 adresinde çalışmaya başlayacaktır.
 
 👤 Kimlik Doğrulama ve Demo Hesap BilgileriSistemde rol tabanlı yetkilendirme (Role-Based Access Control - RBAC) altyapısı kuruludur. Uygulamayı hızlıca test edebilmeniz için veritabanı ilk kez ayağa kalktığında (seed sırasında) otomatik olarak tanımlanan iki adet test hesabı mevcuttur:E-postaŞifreRol (Role)Görünen Ad (Display Name)demo@qybitlabs.comdemo123Kullanıcı (user)Demo Kullanıcıadmin@qybitlabs.comdemo123Yönetici (admin)Qybit Admin
-
