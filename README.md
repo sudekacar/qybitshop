@@ -1,39 +1,60 @@
-Markdown# 🛒 QybitShop - Industrial IoT & E-Commerce Platform
+# 🚀 QybitShop
 
-QybitShop, modern web teknolojileri, katı güvenlik standartları ve yüksek performanslı yazılım mimarileri (RBAC) dikkate alınarak geliştirilmiş full-stack bir e-ticaret ve endüstriyel cihaz yönetim platformudur. Projenin frontend ve backend servisleri tek bir çatı altında birleştirilmiş ve canlı ortama (production) başarılı bir şekilde deploy edilmiştir.
-
-🌐 **Canlı Uygulama Linki (Railway):** [qybitshop-production.up.railway.app](https://qybitshop-production.up.railway.app)
-🎥 **Proje Demo ve Teknik Sunum Videosu:** [Proje Teslim Sistemi Eki]
+Next.js 16 App Router, TypeScript ve Tailwind CSS 4 mimarisi üzerine kurulu, endüstriyel IoT ve modern e-ticaret süreçlerini birleştiren full-stack bir mezuniyet projesidir. Uygulama, veri tutarlılığı ve yüksek performans için ilişkisel SQLite veritabanı altyapısını kullanmakta olup, canlı ortam olarak Railway üzerinde kesintisiz çalışmaktadır.
 
 ---
 
-## 🚀 Proje Kurulumu ve Yerel Çalıştırma (Local Setup)
+## 🌐 Canlı Uygulama & Sunum Bilgileri
 
-Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
-1. **Repoyu Klonlayın:**
+* 🌍 **Canlı Proje URL:** `qybitshop-production.up.railway.app`
+* 🎬 **Teknik Sunum & Demo Videosu:** Proje dizininde yer alan 10 dakikalık sunum videosunda, kod mimarisi ve kullanıcı akışları detaylı olarak anlatılmıştır.
+
+---
+
+## 🔑 Hazır Demo Hesapları
+
+Uygulama ilk kez ayağa kalktığında (seed aşamasında) aşağıdaki iki adet demo hesap otomatik olarak veritabanına işlenir:
+
+| E-posta | Şifre | Rol / Yetki | Görünen Ad |
+| :--- | :--- | :--- | :--- |
+| 🧑‍💻 `demo@qybitlabs.com` | `demo123` | Kullanıcı (User) | Demo Kullanıcı |
+| 🛡️ `admin@qybitlabs.com` | `demo123` | Yönetici (Admin) | Qybit Admin |
+
+> 📌 **Önemli Not:** Giriş sayfasında (`/login`) pratiklik açısından kullanıcı arayüzünde `demo@qybitlabs.com` bilgileri hazır olarak sunulmaktadır. Rol tabanlı yetkilendirme (RBAC) altyapısı hazır olup, admin hesabı ile giriş yapıldığında ilgili yetki durumu profil sayfasında dinamik olarak doğrulanmaktadır.
+
+---
+
+## 🛠️ Kullanılan Teknolojiler ve Mimari Kararlar
+
+### 1. Core Stack
+* **Next.js 16 (App Router):** Frontend ve backend süreçleri entegre bir full-stack mimaride birleştirilmiştir. Sayfaların hızlı yüklenmesi ve SEO optimizasyonu için Server-Side Rendering (SSR) ve Server Components yapısı aktif kullanılmıştır.
+* **TypeScript:** Projenin tüm veri modeli ve API yanıtları katı kurallarla tiplendirilmiş, geliştirme aşamasında tip güvenliği (type-safety) maksimuma çıkarılmıştır.
+* **React 19 & Tailwind CSS 4:** Modern, performanslı ve tamamen duyarlı (responsive) bileşen mimarisi, yardımcı sınıf öncelikli (utility-first) güncel tasarım motoruyla harmanlanmıştır.
+
+### 2. Veritabanı ve Kalıcılık (Persistence)
+* **SQLite & Better-sqlite3:** Uygulamanın kalbinde, dosya tabanlı ancak ilişkisel veri modeli yeteneklerine tam sahip SQLite veritabanı yer alır. Tablolar arasındaki bire-çok (one-to-many) ilişkiler SQL standartlarında korunmaktadır.
+
+### 3. Güvenlik ve Doğrulama (Security)
+* **Iron Session:** Şifreli, durum bilgisi barındırmayan (stateless) ve `httpOnly` çerezler (cookies) kullanan oturum yönetimi kütüphanesi tercih edilmiştir. `middleware.ts` üzerinden korumalı sayfalara yetkisiz erişimler sunucu sınırında engellenmektedir.
+* **Bcrypt:** Kullanıcı parolaları veritabanına asla düz metin (plain text) olarak yazılmaz; kriptografik olarak salt'lanarak hash'lenmiş şekilde saklanır.
+* **Zod:** Form girdileri ve API talepleri daha sunucu sınırındayken şema tabanlı katı bir doğrulamadan geçirilerek veri bütünlüğü güvenceye alınır.
+
+---
+
+## 🚀 Öne Çıkan Gelişmiş Özellikler
+
+* 🌗 **Dinamik Vibe (Dark / Light Mode):** `ThemeContext` (React Context API) ve `localStorage` senkronizasyonu sayesinde kullanıcının tema tercihi sayfa yenilense dahi korunur.
+* 🌐 **Çoklu Dil Desteği (i18n):** Harici kütüphane yükü olmaksızın, yerel JSON sözlük dosyalarından beslenen ve `LanguageContext` ile yönetilen, sayfa yenilenmesine ihtiyaç duymayan saliselik dil geçiş mekanizması kurulmuştur.
+* 🔍 **Arama Optimizasyonu (useDebounce):** Kullanıcı arama çubuğuna yazarken veritabanını yormamak adına istemci tarafında geciktirme (debounce) mekanizması kurgulanmış, SQLite sorguları optimize edilmiştir.
+* 🛒 **Sepet ve Süreklilik:** Sepet durum yönetimi merkezi bir Context yapısında tutulur ve tarayıcı `localStorage` alanı ile anlık senkronize edilerek sayfa yenilemelerinde veri kaybı engellenir.
+* 💳 **Simüle Checkout Döngüsü:** Adres ve sipariş bilgileri alındıktan sonra Server Actions aracılığıyla başarılı bir sipariş döngüsü simüle edilir, veriler ilişkisel veritabanına yazılır ve kullanıcının profilindeki sipariş geçmişinde listelenir.
+
+---
+
+## 💻 Yerel Kurulum (Local Setup)
+
+Projeyi kendi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
+
+1. **Bağımlılıkları yükleyin:**
    ```bash
-   git clone [https://github.com/sude-yaren-kacar/qybitshop.git](https://github.com/sude-yaren-kacar/qybitshop.git)
-   cd qybitshop
-
-Bağımlılıkları Yükleyin:
-
-```bash
-npm install
-```
-
-Veritabanını Hazırlayın (Seed Data):
-Aşağıdaki komut, SQLite veritabanını (data/shop.db) ilk kez oluşturur ve gerekli tüm demo ve admin hesaplarını otomatik olarak içerisine enjekte (seed) eder.
-
-```bash
-npm run db:setup
-```
-
-Uygulamayı Başlatın:
-
-```bash
-npm run dev
-```
-
-Uygulama tarayıcınızda http://localhost:3000 adresinde çalışmaya başlayacaktır.
-
-👤 Kimlik Doğrulama ve Demo Hesap BilgileriSistemde rol tabanlı yetkilendirme (Role-Based Access Control - RBAC) altyapısı kuruludur. Uygulamayı hızlıca test edebilmeniz için veritabanı ilk kez ayağa kalktığında (seed sırasında) otomatik olarak tanımlanan iki adet test hesabı mevcuttur:E-postaŞifreRol (Role)Görünen Ad (Display Name)demo@qybitlabs.comdemo123Kullanıcı (user)Demo Kullanıcıadmin@qybitlabs.comdemo123Yönetici (admin)Qybit Admin
+   npm install
